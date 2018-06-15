@@ -114,7 +114,9 @@ def main():
                 # 可能返回的不是目标数据，加入失败链接组
                 print(response.url)
                 failureLinks.append(response.url)
-
+    # 关闭光标与数据库连接
+    cursor.close()
+    conn.close()
     # 最后打印遗留链接
     print(abandonLinks)
 
